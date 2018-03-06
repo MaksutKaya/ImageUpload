@@ -17,13 +17,15 @@ namespace ImageUpload
 
         protected void BtnEkle_Click(object sender, EventArgs e)
         {
-            fileName = Path.GetFileName(flSmallPhoto.FileName);
+            
             if (flSmallPhoto.HasFile)
             {
                 if (flSmallPhoto.PostedFile.ContentType == "image/jpeg" || flSmallPhoto.PostedFile.ContentType == "image/png")
                 {
                     if (flSmallPhoto.PostedFile.ContentLength < 1024000)
                     {
+                        fileName = Path.GetFileName(flSmallPhoto.FileName);
+
                         flSmallPhoto.PostedFile.SaveAs(Server.MapPath("images/") + fileName.ToString());
                         lblUyari.Text = "";
 
