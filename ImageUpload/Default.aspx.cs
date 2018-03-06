@@ -38,7 +38,6 @@ namespace ImageUpload
                 }
             }
 
-
             if (imgSmall.ImageUrl != "images/No_Image_Small.jpg" & imgSmall.ImageUrl != "" && flSmallPhoto.FileName != "")
             {
                 File.Delete(Server.MapPath(imgSmall.ImageUrl));
@@ -51,12 +50,9 @@ namespace ImageUpload
             {
                 imgSmall.ImageUrl = "images/" + fileName.ToString();
             }
-
         }
 
         public string fileName { get; set; }
-        public byte[] filePath { get; set; }
-        public Image SmallPhoto { get; set; }
 
     }
 }
