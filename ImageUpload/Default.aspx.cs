@@ -26,6 +26,12 @@ namespace ImageUpload
                     {
                         flSmallPhoto.PostedFile.SaveAs(Server.MapPath("images/") + fileName.ToString());
                         lblUyari.Text = "";
+
+                        // silme işlemi
+                        if (imgSmall.ImageUrl != "images/No_Image_Small.jpg" & imgSmall.ImageUrl != "" && flSmallPhoto.FileName != "")
+                        {
+                            File.Delete(Server.MapPath(imgSmall.ImageUrl));
+                        }
                     }
                     else
                     {
@@ -37,11 +43,7 @@ namespace ImageUpload
                     lblUyari.Text = "Resim .jpeg/.png dosyası olmalıdır";
                 }
             }
-
-            if (imgSmall.ImageUrl != "images/No_Image_Small.jpg" & imgSmall.ImageUrl != "" && flSmallPhoto.FileName != "")
-            {
-                File.Delete(Server.MapPath(imgSmall.ImageUrl));
-            }
+            
             if (fileName == "")
             {
                 imgSmall.ImageUrl = "images/No_Image_Small.jpg";
