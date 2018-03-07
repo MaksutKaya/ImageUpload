@@ -46,7 +46,7 @@ namespace ImageUpload
                 }
             }
             
-            if (fileName == "")
+            if (fileName == null)
             {
                 imgSmall.ImageUrl = "images/No_Image_Small.jpg";
             }
