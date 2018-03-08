@@ -34,6 +34,7 @@ namespace ImageUpload
                         {
                             File.Delete(Server.MapPath(imgSmall.ImageUrl));
                         }
+
                     }
                     else
                     {
